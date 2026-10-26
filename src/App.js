@@ -39,6 +39,7 @@ function App() {
   const [cards, setCards] = useState(createCards);
   const [selectedLevel, setSelectedLevel] = useState('all');
   const [practiceLevel, setPracticeLevel] = useState('');
+  const [cardSetKey, setCardSetKey] = useState(0);
 
   const visibleCards =
     selectedLevel === 'all'
@@ -47,11 +48,13 @@ function App() {
 
   function shuffleCards() {
     setCards(createCards());
+    setCardSetKey((key) => key + 1);
   }
 
   function showCardsAtLevel() {
     setCards(createCards(practiceLevel));
     setSelectedLevel('all');
+    setCardSetKey((key) => key + 1);
   }
 
   function speak(text) {
@@ -115,7 +118,7 @@ function App() {
         </div>
 
         {visibleCards.length > 0 ? (
-          <div className="card-grid">
+          <div className="card-grid" key={cardSetKey}>
             {visibleCards.map((item) => (
               <article className="word-card" key={`${item.word}-${item.cefr_level}`}>
                 <div className="card-top">
