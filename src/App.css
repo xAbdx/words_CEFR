@@ -7,6 +7,120 @@
   color: #202a36;
 }
 
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 1;
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cbd5df;
+  border-radius: 50%;
+  background: #fff;
+  color: #315d83;
+  cursor: pointer;
+}
+
+.theme-toggle svg {
+  width: 21px;
+  height: 21px;
+}
+
+.theme-toggle:hover {
+  background: #eaf0f5;
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid #8bb8dc;
+  outline-offset: 2px;
+}
+
+.App.dark-mode {
+  color-scheme: dark;
+  background: #151c24;
+  color: #e7edf3;
+}
+
+.dark-mode .eyebrow,
+.dark-mode .subtitle,
+.dark-mode .part-of-speech,
+.dark-mode .sentence-list,
+.dark-mode .empty-state,
+.dark-mode .filter-control {
+  color: #aab8c6;
+}
+
+.dark-mode .app-footer {
+  background: #202b36;
+  color: #aab8c6;
+}
+
+.dark-mode .footer-credit span {
+  color: #e7edf3;
+}
+
+.dark-mode .app-footer a {
+  color: #9bc9ef;
+}
+
+.dark-mode .filter-control select,
+.dark-mode .level-cards-button,
+.dark-mode .word-card,
+.dark-mode .empty-state {
+  border-color: #3a4856;
+  background: #202b36;
+  color: #e7edf3;
+}
+
+.dark-mode .shuffle-button {
+  border-color: #79a9d1;
+  background: #315d83;
+}
+
+.dark-mode .level-cards-button {
+  color: #9bc9ef;
+}
+
+.dark-mode .level-cards-button:hover:not(:disabled) {
+  background: #293947;
+}
+
+.dark-mode .level-cards-button:disabled {
+  color: #778694;
+}
+
+.dark-mode .level-badge {
+  background: #293947;
+  color: #b7daf7;
+}
+
+.dark-mode .word-card h2 {
+  color: #f0f4f8;
+}
+
+.dark-mode .definition {
+  color: #c4ced8;
+}
+
+.dark-mode .sentence-list {
+  border-color: #3a4856;
+}
+
+.dark-mode .pronunciation-button,
+.dark-mode .theme-toggle {
+  border-color: #465563;
+  background: #293947;
+  color: #b7daf7;
+}
+
+.dark-mode .pronunciation-button:hover,
+.dark-mode .theme-toggle:hover {
+  background: #354958;
+}
+
 .app-header {
   margin: 0 auto 32px;
   max-width: 680px;
@@ -308,6 +422,11 @@
 @media (max-width: 600px) {
   .App {
     padding: 32px 16px;
+  }
+
+  .theme-toggle {
+    top: 12px;
+    right: 12px;
   }
 
   .app-footer {
